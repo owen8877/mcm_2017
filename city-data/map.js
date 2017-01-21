@@ -44,7 +44,7 @@ document.onkeydown = e => {
     if (e.keyCode == keyCode) {
       data.push({x: -x, y: y - 1, type: keySet[keyCode], progress: numberbuffer, bus})
       bus = false
-      console.log(JSON.stringify(data.slice(-1)))
+      //console.log(JSON.stringify(data.slice(-1)))
       console.log(`${parseInt((-x / latCount + y / (latCount*lngCount))*1000)/10}%`)
       dumpCount++;
       if (dumpCount > (latCount * lngCount / 100)) {
@@ -60,7 +60,7 @@ document.onkeydown = e => {
       numberbuffer = number[n]
     }
   }
-  if (e.keyCode == '8')
+  if (e.keyCode == '46')
     back()
   if (e.keyCode == '66')
     bus = true
