@@ -1,6 +1,6 @@
 'use strict'
 
-let file = './Nottingham.json'
+let file = './barrie.json'
 let data = require(file)
 const fs = require('fs')
 
@@ -28,8 +28,7 @@ for (let d of data) {
   tmp.push(`${d.x} ${d.y} ${d.progress} ${typeConv[d.type]} ${d.bus ? 'T' : 'F'}`)
 }
 
-/*fs.writeFile(`Nottingham.cinput`, tmp.join('\n'), function (err) {
+fs.writeFile(`barrie.cinput`, tmp.join('\n'), function (err) {
   if (err) throw err;
-  console.log(`Wrote Nottingham.cinput`)
+  console.log(`Wrote barrie.cinput`)
 })
-*/

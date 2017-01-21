@@ -4,7 +4,7 @@ const D3Node = require('d3-node')
 const fs = require('fs')
 const MD = require('google-material-color')
 
-const files = ['./Nottingham']
+const files = ['./barrie']
 const config = {
   scale: 10,
   padding: 0.05
