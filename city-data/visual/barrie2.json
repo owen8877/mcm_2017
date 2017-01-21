@@ -12839,43 +12839,8 @@
     },
     {
         "x": 49,
-        "y": 0,
-        "type": "o",
-        "progress": 1,
-        "bus": false
-    },
-    {
-        "x": 49,
-        "y": 1,
-        "type": "r",
-        "progress": 2,
-        "bus": false
-    },
-    {
-        "x": 49,
         "y": 8,
         "type": "o",
-        "progress": 1,
-        "bus": false
-    },
-    {
-        "x": 49,
-        "y": 58,
-        "type": "u",
-        "progress": 1,
-        "bus": false
-    },
-    {
-        "x": 49,
-        "y": 59,
-        "type": "u",
-        "progress": 1,
-        "bus": false
-    },
-    {
-        "x": 49,
-        "y": 60,
-        "type": "u",
         "progress": 1,
         "bus": false
     }
