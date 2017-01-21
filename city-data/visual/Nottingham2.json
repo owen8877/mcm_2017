@@ -14260,13 +14260,6 @@
     },
     {
         "x": 45,
-        "y": 9,
-        "type": "o",
-        "progress": 2,
-        "bus": false
-    },
-    {
-        "x": 45,
         "y": 24,
         "type": "r",
         "progress": 2,
@@ -14351,34 +14344,6 @@
     },
     {
         "x": 46,
-        "y": 6,
-        "type": "o",
-        "progress": 2,
-        "bus": false
-    },
-    {
-        "x": 46,
-        "y": 7,
-        "type": "o",
-        "progress": 2,
-        "bus": false
-    },
-    {
-        "x": 46,
-        "y": 8,
-        "type": "o",
-        "progress": 2,
-        "bus": false
-    },
-    {
-        "x": 46,
-        "y": 9,
-        "type": "o",
-        "progress": 2,
-        "bus": false
-    },
-    {
-        "x": 46,
         "y": 27,
         "type": "w",
         "progress": 2,
@@ -14422,48 +14387,6 @@
     {
         "x": 46,
         "y": 33,
-        "type": "o",
-        "progress": 2,
-        "bus": false
-    },
-    {
-        "x": 47,
-        "y": 4,
-        "type": "o",
-        "progress": 2,
-        "bus": false
-    },
-    {
-        "x": 47,
-        "y": 5,
-        "type": "o",
-        "progress": 2,
-        "bus": false
-    },
-    {
-        "x": 47,
-        "y": 6,
-        "type": "o",
-        "progress": 2,
-        "bus": false
-    },
-    {
-        "x": 47,
-        "y": 7,
-        "type": "o",
-        "progress": 2,
-        "bus": false
-    },
-    {
-        "x": 47,
-        "y": 8,
-        "type": "o",
-        "progress": 2,
-        "bus": false
-    },
-    {
-        "x": 47,
-        "y": 9,
         "type": "o",
         "progress": 2,
         "bus": false
