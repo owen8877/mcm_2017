@@ -5,3 +5,4 @@
 *.toc
 *~
 node_modules
+*.db

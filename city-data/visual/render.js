@@ -4,7 +4,7 @@ const D3Node = require('d3-node')
 const fs = require('fs')
 const MD = require('google-material-color')
 
-const files = ['./barrie']
+const files = ['./barrie', './Nottingham']
 const config = {
   scale: 10,
   padding: 0.05
@@ -136,10 +136,6 @@ for (let city of data) {
     let output = draw(city.content, width, height, subconfig)
 
     let filenameconfig = Object.keys(subconfig).filter(key => subconfig[key]).join(' ')
-    fs.writeFile(`${city.name} ${filenameconfig}.svg`, output, (err) => {
-      if (err)
-        throw err
-      console.log(`Wrote ${city.name} ${filenameconfig}.svg`)
-    })
+    fs.writeFileSync(`${city.name} ${filenameconfig}.svg`, output)
   }
 }

@@ -1,7 +1,7 @@
 'use strict'
 
-let file = './barrie.json'
-let data = require(file)
+let file = 'Nottingham'
+let data = require(`./${file}`)
 const fs = require('fs')
 
 let X = 1 + data.reduce((acc, cur) => {
@@ -28,7 +28,7 @@ for (let d of data) {
   tmp.push(`${d.x} ${d.y} ${d.progress} ${typeConv[d.type]} ${d.bus ? 'T' : 'F'}`)
 }
 
-fs.writeFile(`barrie.cinput`, tmp.join('\n'), function (err) {
+fs.writeFile(`${file}.cinput`, tmp.join('\n'), function (err) {
   if (err) throw err;
-  console.log(`Wrote barrie.cinput`)
+  console.log(`Wrote ${file}.cinput`)
 })
