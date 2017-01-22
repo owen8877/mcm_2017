@@ -91,11 +91,12 @@ for (let file of files) {
     }
   }
 
-  let outputFilename = `${name}-patch.json`
+  let outputFilename = `patch-data/${name}-patch.json`
   fs.writeFileSync(outputFilename, JSON.stringify(origin))
   console.log(`Wrote ${outputFilename}`)
 
-  let diffFilename = `${name}-patch-diff.json`
+  let diffFilename = `patch-data/${name}-patch-diff.json`
   fs.writeFileSync(diffFilename, JSON.stringify(diff))
   console.log(`Wrote ${diffFilename}`)
+  //console.log(diff.length)
 }
