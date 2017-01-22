@@ -18,7 +18,7 @@
 #define BUSSTATION_DEVELOP 25
 #define UNUSED_DEVELOP 20
 #define NOTTINGHAM_INCREASE_RATE 1.137
-#define BARRIE_INCREASE_RATE 1.1
+#define BARRIE_INCREASE_RATE 1.0567
 
 using namespace std;
 
@@ -79,22 +79,22 @@ struct areaBlock {
 	areaBlock() : type(area::wasteland), development(0), busStation(false), population(0) { ; }
 };
 
-const char fileName1[] = "Nottingham.cinput";
-const char fileName2[] = "barrie.cinput";
 const char outFile[] = "output.coutput";
-const char *inputFile = fileName1;
+//const char inputFile[] = "Nottingham.cinput";
+const char inputFile[] = "barrie.cinput";
+//const char inputFile[] = "nottingham-patch.cinput";
+//const char inputFile[] = "barrie-patch.cinput";
 const char *outputFile = outFile;
 const double affectParameter[5][5] = { {0, 0.5, 0.3, 0.2, 0}, 
 									   {0.4, 0, 0.4, 0.2, 0}, 
 									   {0.6, 0.3, 0, 0.1, 0}, 
 									   {0.8, 0.1, 0.1, 0}, 
 									   {0, 0, 0, 0, 0} };
-const double populationIncreaseRate = NOTTINGHAM_INCREASE_RATE;
 
 areaBlock city[MAX_ROW_SIZE][MAX_COL_SIZE];
 areaBlock originalCity[MAX_ROW_SIZE][MAX_COL_SIZE];
 int population, popCapacity, blockCount[4];
-double populationIncreaseRate, livingScore, openspaceScore, housingScore, transportScore, totalScore, rawLivingScore, rawOpenspaceScore;
+double livingScore, openspaceScore, housingScore, transportScore, totalScore, rawLivingScore, rawOpenspaceScore;
 double blockScore[MAX_ROW_SIZE][MAX_COL_SIZE];
 double beautyScore[MAX_ROW_SIZE][MAX_COL_SIZE];
 double fitScore[MAX_ROW_SIZE][MAX_COL_SIZE];
@@ -104,7 +104,7 @@ double adjust1(double x) {
 }
 
 double adjust2(double x) {
-	return (361.736*x - 160) / (3.61736*x - 1);
+	return (422.932*x - 160) / (4.22932*x - 1);
 }
 
 double _adjust1(double x) {
@@ -112,7 +112,7 @@ double _adjust1(double x) {
 }
 
 double _adjust2(double x) {
-	return (217.0416) / ((3.61736*x - 1)*(3.61736*x - 1));
+	return (253.7592) / ((3.61736*x - 1)*(3.61736*x - 1));
 }
 
 void inputData() { 
@@ -126,6 +126,40 @@ void inputData() {
 		originalCity[x][y].type = city[x][y].type = static_cast<area::areaType>(type);
 		originalCity[x][y].busStation = city[x][y].busStation = (busStation == 'T');
 	}
+}
+
+void getUpgrade() {
+	ifstream ifs("barrie.cinput");
+	ifstream ifs2("barrie-patch.cinput");
+	int temp1 = 0, temp2 = 0;
+	double rate = 0;
+	while (!ifs.eof()) {
+		int x, y, development, type;
+		char busStation;
+		ifs >> x >> y >> development >> type >> busStation;
+		originalCity[x][y].population = development;
+		originalCity[x][y].development  = development;
+		originalCity[x][y].type  = static_cast<area::areaType>(type);
+		originalCity[x][y].busStation  = (busStation == 'T');
+		temp2 += development;
+		if (type == area::residence) temp1 += development;
+	}
+	while (!ifs2.eof()) {
+		int x, y, development, type;
+		char busStation;
+		ifs2 >> x >> y >> development >> type >> busStation;
+		city[x][y].population = development;
+		city[x][y].development = development;
+		city[x][y].type = static_cast<area::areaType>(type);
+		city[x][y].busStation = (busStation == 'T');
+	}
+	int ans = 0;
+	for (int x = 0; x < MAX_ROW_SIZE; x++)
+		for (int y = 0; y < MAX_COL_SIZE; y++) ans += city[x][y].development - originalCity[x][y].development;
+	rate = temp1 / static_cast<double>(temp2);
+	cout << ans << endl;
+	cout << ans / (1 - rate) << endl;
+	cout << rate << endl;
 }
 
 void outputData() {
@@ -414,14 +448,15 @@ void upgradeUnused(int _limit) {
 		area::areaType developType;
 		for (int i = 0; i < MAX_ROW_SIZE; i++)
 			for (int j = 0; j < MAX_COL_SIZE; j++) {
-				if (blockUsed[i][j] || city[i][j].type != area::unused) continue;
-				for (area::areaType curType = area::residence; curType < area::unused; curType++) {
-					for (int add = 0; add  <= MAX_LEVEL && add <= _limit; add++) {
-						city[i][j].development = add;
-						city[i][j].type = curType;
-						double temp1 = 0, temp2 = 0;
-						int k, l;
-						switch (curType) {
+				if (blockUsed[i][j] || (city[i][j].type != area::unused && city[i][j].type != area::openspace) || (city[i][j].type == area::openspace && city[i][j].development > 1)) continue;
+				if (city[i][j].type == area::unused) {
+					for (area::areaType curType = area::residence; curType < area::unused; curType++) {
+						for (int add = 0; add <= MAX_LEVEL && add <= _limit; add++) {
+							city[i][j].development = add;
+							city[i][j].type = curType;
+							double temp1 = 0, temp2 = 0;
+							int k, l;
+							switch (curType) {
 							case area::residence:
 								temp1 += blockScore[i][j] * sqrt(city[i][j].development) / blockCount[area::residence] * _adjust1(rawLivingScore); // livingScore Change
 								temp1 += 0; // openspaceScore Change
@@ -460,16 +495,76 @@ void upgradeUnused(int _limit) {
 								temp1 += temp2 / (blockCount[area::residence] + blockCount[area::commerce] + blockCount[area::entertain]) * _adjust2(rawOpenspaceScore); // openspaceScore Change
 								temp1 += 0; // housingScore Change
 								break;
+							}
+							if (temp1 / static_cast<double>(add) > maxIncrease) {
+								maxIncrease = temp1 / static_cast<double>(add);
+								x = i;
+								y = j;
+								develop = add;
+								developType = curType;
+							}
+							city[i][j].development = 0;
+							city[i][j].type = area::unused;
 						}
-						if (temp1 / static_cast<double>(add) > maxIncrease) {
-							maxIncrease = temp1 / static_cast<double>(add);
-							x = i;
-							y = j;
-							develop = add;
-							developType = curType;
+					}
+				}
+				else {
+					for (area::areaType curType = area::residence; curType < area::unused; curType++) {
+						if (curType == area::openspace) continue;
+						for (int add = 0; add <= MAX_LEVEL && add <= _limit; add++) {
+							city[i][j].development = add;
+							city[i][j].type = curType;
+							double temp1 = 0, temp2 = 0;
+							int k, l;
+							switch (curType) {
+							case area::residence:
+								temp1 += blockScore[i][j] * sqrt(city[i][j].development) / blockCount[area::residence] * _adjust1(rawLivingScore); // livingScore Change
+								temp2 = 0;
+								for (k = max(0, i - NEIGHBOURHOOD_SIZE); k <= min(MAX_ROW_SIZE - 1, i + NEIGHBOURHOOD_SIZE); k++)
+									for (l = max(0, j - NEIGHBOURHOOD_SIZE); l <= min(MAX_COL_SIZE - 1, j + NEIGHBOURHOOD_SIZE); l++) if (city[k][l].type < area::openspace) temp2 -= 1 / static_cast<double>(abs(k - i) * abs(k - i) + abs(l - j)*abs(l - j) + 1);
+								temp1 += temp2 / (blockCount[area::residence] + blockCount[area::commerce] + blockCount[area::entertain]) * _adjust2(rawOpenspaceScore); // openspaceScore Change
+								for (k = max(0, i - NEIGHBOURHOOD_SIZE); k <= min(MAX_ROW_SIZE - 1, i + NEIGHBOURHOOD_SIZE); k++)
+									for (l = max(0, j - NEIGHBOURHOOD_SIZE); l <= min(MAX_COL_SIZE - 1, j + NEIGHBOURHOOD_SIZE); l++) if (city[k][l].type == area::commerce || city[k][l].type == area::entertain) temp2 += getFitScore(k, l) - fitScore[k][l];
+								temp2 = 0;
+								temp1 += temp2 / static_cast<double>(blockCount[area::commerce] + blockCount[area::entertain]); // housingScore Change
+								break;
+							case area::commerce:
+								for (k = max(0, i - NEIGHBOURHOOD_SIZE); k <= min(MAX_ROW_SIZE - 1, i + NEIGHBOURHOOD_SIZE); k++)
+									for (l = max(0, j - NEIGHBOURHOOD_SIZE); l <= min(MAX_COL_SIZE - 1, j + NEIGHBOURHOOD_SIZE); l++) if (city[k][l].type == area::residence) temp2 += add * sqrt(city[k][l].development) * affectParameter[area::residence][area::commerce] / static_cast<double>(abs(k - i) * abs(k - i) + abs(l - j)*abs(l - j) + 1);
+								temp1 += temp2 / blockCount[area::residence] * _adjust1(rawLivingScore); // livingScore Change
+								temp2 = 0;
+								for (k = max(0, i - NEIGHBOURHOOD_SIZE); k <= min(MAX_ROW_SIZE - 1, i + NEIGHBOURHOOD_SIZE); k++)
+									for (l = max(0, j - NEIGHBOURHOOD_SIZE); l <= min(MAX_COL_SIZE - 1, j + NEIGHBOURHOOD_SIZE); l++) if (city[k][l].type < area::openspace) temp2 -= 1 / static_cast<double>(abs(k - i) * abs(k - i) + abs(l - j)*abs(l - j) + 1);
+								temp1 += temp2 / (blockCount[area::residence] + blockCount[area::commerce] + blockCount[area::entertain]) * _adjust2(rawOpenspaceScore); // openspaceScore Change
+								for (k = max(0, i - NEIGHBOURHOOD_SIZE); k <= min(MAX_ROW_SIZE - 1, i + NEIGHBOURHOOD_SIZE); k++)
+									for (l = max(0, j - NEIGHBOURHOOD_SIZE); l <= min(MAX_COL_SIZE - 1, j + NEIGHBOURHOOD_SIZE); l++) if (city[k][l].type == area::commerce || city[k][l].type == area::entertain) temp2 += getFitScore(k, l) - fitScore[k][l];
+								temp2 = 0;
+								temp1 += temp2 / static_cast<double>(blockCount[area::commerce] + blockCount[area::entertain]); // housingScore Change
+								break;
+							case area::entertain:
+								for (k = max(0, i - NEIGHBOURHOOD_SIZE); k <= min(MAX_ROW_SIZE - 1, i + NEIGHBOURHOOD_SIZE); k++)
+									for (l = max(0, j - NEIGHBOURHOOD_SIZE); l <= min(MAX_COL_SIZE - 1, j + NEIGHBOURHOOD_SIZE); l++) if (city[k][l].type == area::residence) temp2 += add * sqrt(city[k][l].development) * affectParameter[area::residence][area::entertain] / static_cast<double>(abs(k - i) * abs(k - i) + abs(l - j)*abs(l - j) + 1);
+								temp1 += temp2 / blockCount[area::residence] * _adjust1(rawLivingScore); // livingScore Change
+								temp2 = 0;
+								for (k = max(0, i - NEIGHBOURHOOD_SIZE); k <= min(MAX_ROW_SIZE - 1, i + NEIGHBOURHOOD_SIZE); k++)
+									for (l = max(0, j - NEIGHBOURHOOD_SIZE); l <= min(MAX_COL_SIZE - 1, j + NEIGHBOURHOOD_SIZE); l++) if (city[k][l].type < area::openspace) temp2 -= 1 / static_cast<double>(abs(k - i) * abs(k - i) + abs(l - j)*abs(l - j) + 1);
+								temp1 += temp2 / (blockCount[area::residence] + blockCount[area::commerce] + blockCount[area::entertain]) * _adjust2(rawOpenspaceScore); // openspaceScore Change
+								for (k = max(0, i - NEIGHBOURHOOD_SIZE); k <= min(MAX_ROW_SIZE - 1, i + NEIGHBOURHOOD_SIZE); k++)
+									for (l = max(0, j - NEIGHBOURHOOD_SIZE); l <= min(MAX_COL_SIZE - 1, j + NEIGHBOURHOOD_SIZE); l++) if (city[k][l].type == area::commerce || city[k][l].type == area::entertain) temp2 += getFitScore(k, l) - fitScore[k][l];
+								temp2 = 0;
+								temp1 += temp2 / static_cast<double>(blockCount[area::commerce] + blockCount[area::entertain]); // housingScore Change
+								break;
+								if (temp1 / static_cast<double>(add) > maxIncrease) {
+									maxIncrease = temp1 / static_cast<double>(add);
+									x = i;
+									y = j;
+									develop = add;
+									developType = curType;
+								}
+								city[i][j].development = 0;
+								city[i][j].type = area::unused;
+							}
 						}
-						city[i][j].development = 0;
-						city[i][j].type = area::unused;
 					}
 				}
 			}
@@ -541,22 +636,23 @@ void printScore() {
 
 int main() {	
 	cout << setiosflags(ios::fixed) << setprecision(4);
-	inputData();
-	getBlockInfo();
-	getBeautyInfo();
-	getLivingScore();
-	getOpenSpaceScore();
-	getHousingScore();
-	getTransportScore();
-	printScore();
-	upgradeResidence(RESIDENCE_DEVELOP);
-	upgradeCommerce(COMMERCE_DEVELOP);
-	upgradeEntertain(ENTERTAIN_DEVELOP);
-	upgradeOpenspace(OPENSPACE_DEVELOP);
-	upgradeUnused(UNUSED_DEVELOP);
-	upgradeBusStation(BUSSTATION_DEVELOP);
-	printScore();
-	outputData();
-	outputDiff();
+	//inputData();
+	//getBlockInfo();
+	//getBeautyInfo();
+	//getLivingScore();
+	//getOpenSpaceScore();
+	//getHousingScore();
+	//getTransportScore();
+	//printScore();
+	//upgradeResidence(RESIDENCE_DEVELOP);
+	//upgradeCommerce(COMMERCE_DEVELOP);
+	//upgradeEntertain(ENTERTAIN_DEVELOP);
+	//upgradeOpenspace(OPENSPACE_DEVELOP);
+	//upgradeUnused(UNUSED_DEVELOP);
+	//upgradeBusStation(BUSSTATION_DEVELOP);
+	//printScore();
+	//outputData();
+	//outputDiff();
+	getUpgrade();
 	system("pause");
 }
