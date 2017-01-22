@@ -31,7 +31,7 @@ for (let file of files) {
     tmp.push(`${d.x} ${d.y} ${d.progress} ${typeConv[d.type]} ${d.bus ? 'T' : 'F'}`)
   }
 
-  fs.writeFileSync(`${path.basename(file, '.json')}.cinput`, tmp.join('\n'))
-  console.log(`Wrote ${path.basename(file, '.json')}.cinput`)
+  fs.writeFileSync(`cinput/${path.basename(file, '.json')}.cinput`, tmp.join('\n'))
+  console.log(`Wrote cinput/${path.basename(file, '.json')}.cinput`)
 }
 
