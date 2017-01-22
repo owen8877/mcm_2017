@@ -143,6 +143,95 @@ patch: [
         [52.98, -1.156]
       ]
     }
+  },
+  {
+    name: "Broadmarsh shopping centre",
+    type: 'c',
+    range: {
+      rect: true,
+      coord: [
+        [52.951371, -1.150754],
+        [52.947, -1.140]
+      ]
+    }
+  },
+  {
+    name: "Energy Park",
+    type: 'c',
+    range: {
+      rect: true,
+      coord: [
+        [53.011914, -1.220205],
+        [53.001, -1.18]
+      ]
+    }
+  },
+  {
+    name: "Trent bridge",
+    type: 'r',
+    range: {
+      circle: true,
+      coord: [52.938442, -1.136374],
+      r: 2000
+    }
+  },
+  {
+    name: "Corporate commercial office",
+    type: 'r',
+    range: {
+      rect: true,
+      coord: [
+        [52.947878, -1.147278],
+        [52.9450, -1.133]
+      ]
+    }
+  },
+  {
+    name: "Southern Gateway",
+    type: 'c',
+    range: {
+      circle: true,
+      coord: [52.946413, -1.148430],
+      r: 900
+    }
+  },
+  {
+    name: "Nottingham Science Park",
+    type: 'r',
+    range: {
+      circle: true,
+      coord: [52.9363832,-1.187854],
+      r: 1000
+    }
+  },
+  {
+    name: "Nottingham CleanTech Centre",
+    type: 'c',
+    range: {
+      rect: true,
+      coord: [
+        [52.958681, -1.184466],
+        [52.950, -1.166]
+      ]
+    }
+  },
+  {
+    name: "Southglade Food Park",
+    type: 'r',
+    range: {
+      circle: true,
+      coord: [52.98, -1.17],
+      r: 1200
+    }
+  },
+  {
+    name: "Southglade Food Park",
+    type: 'c',
+    range: {
+      circle: true,
+      coord: [52.925, -1.17],
+      r: 1500
+    }
   }
 ]
 }
