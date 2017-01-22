@@ -135,7 +135,7 @@ for (let city of data) {
       busStation: false,
       hideBlock: true
     },
-    {
+    /*{
       name: 'development',
       typeOn: true,
       progressOn: true,
@@ -162,7 +162,7 @@ for (let city of data) {
       progressOn: false,
       busStation: true,
       hideBlock: true
-    }
+    }*/
   ]
 
   for (let subconfig of seq) {
