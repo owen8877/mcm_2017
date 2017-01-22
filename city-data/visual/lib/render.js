@@ -1,6 +1,7 @@
 'use strict'
 
 const D3Node = require('d3-node')
+const d3 = require('d3')
 const fs = require('fs')
 const path = require('path')
 const MD = require('google-material-color')
@@ -39,7 +40,16 @@ const colorPalette = (type, progress) => {
 for (let file of files) {
   let input = fs.readFileSync(path.resolve(process.env.PWD, file))
   let datum = JSON.parse(input)
-  data.push({name: path.basename(file, '.json'), content: datum})
+  let name = path.basename(file, '.json')
+  let border
+  try {
+    border = JSON.parse(fs.readFileSync(path.resolve(process.env.PWD, './border', `${name}-border.json`)))
+  } catch (e) {
+    console.log(e)
+    border = null
+  }
+  datum.border = border
+  data.push({name, content: datum})
 }
 
 const draw = (dataSet, width, height, subconfig = {typeOn: true, progressOn: true, busStation: false, hideBlock: false}) => {
@@ -55,6 +65,20 @@ const draw = (dataSet, width, height, subconfig = {typeOn: true, progressOn: tru
     .append('rect')
     .attr('x', 0).attr('y', 0).attr('width', '100%').attr('height', '100%')
     .attr('fill', '#EEEEEE')
+
+  // draw border
+  let lineFunction = d3.svg.line()
+    .x(function(d) { return d.x })
+    .y(function(d) { return d.y })
+    .interpolate("linear")
+
+  if (dataSet.border)
+    svg
+      .append("path")
+      .attr("d", lineFunction(dataSet.border))
+      .attr("stroke", "blue")
+      .attr("stroke-width", 0.4)
+      .attr("fill", "none")
 
   // draw blocks
   svg
@@ -145,7 +169,7 @@ for (let city of data) {
     let output = draw(city.content, width, height, subconfig)
 
     let filenameconfig = subconfig.name
-    fs.writeFileSync(`${city.name} ${filenameconfig}.svg`, output)
-    console.log(`Wrote ${city.name} ${filenameconfig}.svg`)
+    fs.writeFileSync(`${city.name}-${filenameconfig}.svg`, output)
+    console.log(`Wrote ${city.name}-${filenameconfig}.svg`)
   }
 }
