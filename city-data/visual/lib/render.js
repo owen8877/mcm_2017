@@ -5,6 +5,7 @@ const d3 = require('d3')
 const fs = require('fs')
 const path = require('path')
 const MD = require('google-material-color')
+const topojson = require('topojson')
 
 const files = process.argv.slice(2)
 const config = {
@@ -99,21 +100,26 @@ const draw = (dataSet, width, height, {typeOn = true, progressOn = true, busStat
 
   // draw border
   if (dataSet.border) {
-    //let projection = d3.geoMercator().center(dataSet.borderExtra.latlng)
-    //let path = d3.geoPath(projection)
+    console.log(dataSet.borderExtra.lnglat)
+    //geoMercator()
+    //geoOrthographic()
+    let projection = d3.geoMercator().scale(dataSet.borderExtra.scale).center(dataSet.borderExtra.lnglat).translate([0, 0])
+    let geoPath = d3.geoPath(projection)
     svg
-      .selectAll('path')
+      /*.selectAll('path')
       .data(dataSet.border)
-      .enter()
+      .enter()*/
       .append('path')
-      .attr('d', path)
+      .datum(dataSet.border)
+      .attr('d', geoPath)
       /*.append("path")
       .attr("d", borderProcess(dataSet.border))*/
       .attr("stroke", terrian ? MD.get('Blue', '900') : MD.get('Grey'))
       .attr("stroke-width", 0.2)
-      .attr("stroke-opacity", terrian ? 0.5 : 0.3)
+      .attr("stroke-opacity", terrian ? 0.9 : 0.9)
       .attr("fill", terrian ? MD.get('Blue') : MD.get('Grey'))
       .attr("fill-opacity", terrian ? 0.5 : 0.1)
+      .attr("transform", "scale(" + 1 / Math.cos(3.14 / 180 * dataSet.borderExtra.lnglat[1]) + ", 1)")
   }
 
   // draw bus station
