@@ -1,0 +1,5 @@
+问题阐述：
+根据the Smart Growth Network提出的十条smart growth principle，我们需要寻求一个衡量城市发展成功度的metric，并选择两个不在同一个continent上的中型城市，利用我们的metric来实现以下的几个requirement：
+Requirement 1  利用我们的metric来判断这两个城市的政府目前采取的growth plan是否遵循了smart growth principles，并衡量其成功度
+Requirement 2  根据这两个城市的地理情况、发展预期和经济机遇，根据我们提出的metric制定一个适合它们的growth plan
+Requirement 3  如果这两个城市直至2050年，人口增长了50%，对我们所提出的growth plan进行修正
