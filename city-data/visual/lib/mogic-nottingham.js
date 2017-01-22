@@ -2,13 +2,7 @@
 
 const fs = require('fs')
 
-let data = require('./Nottingham2.json')
-
-/*data = data.map(d => {
-    if (!(d.y>=11&&d.y<=54&&d.x>=8&&d.x<=40) && d.type == 'o')
-        d.type = 'u'
-    return d
-})*/
+let data = require('../nottingham-orig.json')
 
 for (let i = 0; i < data.length; ++i) {
     if (!(data[i].y>=11&&data[i].y<=54&&data[i].x>=8&&data[i].x<=40)) {

@@ -2,9 +2,10 @@
 
 const D3Node = require('d3-node')
 const fs = require('fs')
+const path = require('path')
 const MD = require('google-material-color')
 
-const files = ['./barrie', './Nottingham']
+const files = process.argv.slice(2)
 const config = {
   scale: 10,
   padding: 0.05
@@ -26,6 +27,7 @@ const colorPalette = (type, progress) => {
     1: '200',
     2: '300',
     3: '500',
+    4: 'A400',
     0: '100',
     null: '100'
   }
@@ -35,7 +37,9 @@ const colorPalette = (type, progress) => {
 }
 
 for (let file of files) {
-  data.push({name: file, content: require(file)})
+  let input = fs.readFileSync(path.resolve(process.env.PWD, file))
+  let datum = JSON.parse(input)
+  data.push({name: path.basename(file, '.json'), content: datum})
 }
 
 const draw = (dataSet, width, height, subconfig = {typeOn: true, progressOn: true, busStation: false, hideBlock: false}) => {
@@ -101,30 +105,35 @@ for (let city of data) {
 
   let seq = [
     {
+      name: 'terrian',
       typeOn: false,
       progressOn: false,
       busStation: false,
       hideBlock: true
     },
     {
+      name: 'development',
       typeOn: true,
       progressOn: true,
       busStation: false,
       hideBlock: false
     },
     {
+      name: 'progressOnly',
       typeOn: false,
       progressOn: true,
       busStation: false,
       hideBlock: false
     },
     {
+      name: 'typeOnly',
       typeOn: true,
       progressOn: false,
       busStation: false,
       hideBlock: false
     },
     {
+      name: 'busStation',
       typeOn: false,
       progressOn: false,
       busStation: true,
@@ -135,7 +144,8 @@ for (let city of data) {
   for (let subconfig of seq) {
     let output = draw(city.content, width, height, subconfig)
 
-    let filenameconfig = Object.keys(subconfig).filter(key => subconfig[key]).join(' ')
+    let filenameconfig = subconfig.name
     fs.writeFileSync(`${city.name} ${filenameconfig}.svg`, output)
+    console.log(`Wrote ${city.name} ${filenameconfig}.svg`)
   }
 }
