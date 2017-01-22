@@ -5,3 +5,9 @@
 *.toc
 *~
 node_modules
+<<<<<<< HEAD
+=======
+*.db
+*.svg
+simulation
+>>>>>>> 233a36f6d09bd31d9676cea352dcf9fa747578d8
