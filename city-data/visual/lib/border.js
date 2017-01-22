@@ -82,6 +82,7 @@ request.get(`https://www.openstreetmap.org/api/0.6/relation/${urln}`)
           let $ = cheerio.load(body)
           // iterate ways
           let root = $('osm').find('node')[0]
+          //console.log(root.attribs)
           return {lat: root.attribs.lat, lng: root.attribs.lon}
         })
     }))
