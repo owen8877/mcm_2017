@@ -17,7 +17,7 @@ for (let i = 0; i < data.length; ++i) {
     }
 }
 
-fs.writeFile(`Nottingham.json`, JSON.stringify(data), function (err) {
+fs.writeFile(`nottingham.json`, JSON.stringify(data), function (err) {
     if (err) throw err;
-    console.log(`Wrote Nottingham.json`);
+    console.log(`Wrote nottingham.json`);
 })
