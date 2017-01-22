@@ -29,8 +29,8 @@ const colorPalette = (type, progress) => {
     2: '300',
     3: '500',
     4: 'A400',
-    0: '100',
-    null: '100'
+    0: '200',
+    null: '200'
   }
   if (type == 'u')
     progress = 0
@@ -41,18 +41,24 @@ for (let file of files) {
   let input = fs.readFileSync(path.resolve(process.env.PWD, file))
   let datum = JSON.parse(input)
   let name = path.basename(file, '.json')
-  let border
+  let border, borderExtra
   try {
-    border = JSON.parse(fs.readFileSync(path.resolve(process.env.PWD, './border', `${name}-border.json`)))
+    let _name = name.split('-')[0]
+    //border = JSON.parse(fs.readFileSync(path.resolve('../border', `${_name}-border.json`)))
+    border = require(`../border/${_name}-border.json`)
+    borderExtra = require(`../border/${_name}-border-extra.json`)
   } catch (e) {
-    console.log(e)
+    console.log('Cannot find terrian!')
     border = null
   }
   datum.border = border
+  datum.borderExtra = borderExtra
   data.push({name, content: datum})
 }
 
-const draw = (dataSet, width, height, subconfig = {typeOn: true, progressOn: true, busStation: false, hideBlock: false}) => {
+//const borderProcess = d3.svg.line().x(d => d.x).y(d => d.y).interpolate("linear")
+
+const draw = (dataSet, width, height, {typeOn = true, progressOn = true, busStation = false, hideBlock = false, terrian = false}) => {
   let d3n = new D3Node()
 
   let svg = d3n.createSVG()
@@ -64,21 +70,7 @@ const draw = (dataSet, width, height, subconfig = {typeOn: true, progressOn: tru
   svg
     .append('rect')
     .attr('x', 0).attr('y', 0).attr('width', '100%').attr('height', '100%')
-    .attr('fill', '#EEEEEE')
-
-  // draw border
-  let lineFunction = d3.svg.line()
-    .x(function(d) { return d.x })
-    .y(function(d) { return d.y })
-    .interpolate("linear")
-
-  if (dataSet.border)
-    svg
-      .append("path")
-      .attr("d", lineFunction(dataSet.border))
-      .attr("stroke", "blue")
-      .attr("stroke-width", 0.4)
-      .attr("fill", "none")
+    .attr('fill', MD.get('Grey', '50'))
 
   // draw blocks
   svg
@@ -100,13 +92,32 @@ const draw = (dataSet, width, height, subconfig = {typeOn: true, progressOn: tru
       return 1 - 2 * config.padding
     })
     .attr("fill", d => {
-      if (subconfig.hideBlock)
+      if (hideBlock)
         return colorPalette('wa', '2')
-      return colorPalette(subconfig.typeOn ? d.type : 'wa', subconfig.progressOn ? d.progress : '3')
+      return colorPalette(typeOn ? d.type : 'wa', progressOn ? d.progress : '3')
     })
 
+  // draw border
+  if (dataSet.border) {
+    //let projection = d3.geoMercator().center(dataSet.borderExtra.latlng)
+    //let path = d3.geoPath(projection)
+    svg
+      .selectAll('path')
+      .data(dataSet.border)
+      .enter()
+      .append('path')
+      .attr('d', path)
+      /*.append("path")
+      .attr("d", borderProcess(dataSet.border))*/
+      .attr("stroke", terrian ? MD.get('Blue', '900') : MD.get('Grey'))
+      .attr("stroke-width", 0.2)
+      .attr("stroke-opacity", terrian ? 0.5 : 0.3)
+      .attr("fill", terrian ? MD.get('Blue') : MD.get('Grey'))
+      .attr("fill-opacity", terrian ? 0.5 : 0.1)
+  }
+
   // draw bus station
-  if (subconfig.busStation) {
+  if (busStation) {
     svg
       .append('g')
       .selectAll('circle')
@@ -125,6 +136,11 @@ const draw = (dataSet, width, height, subconfig = {typeOn: true, progressOn: tru
 for (let city of data) {
   let width = 1 + city.content.reduce((acc, cur) => (acc > cur.y) ? acc : cur.y, 0),
     height = 1 + city.content.reduce((acc, cur) => (acc > cur.x) ? acc : cur.x, 0)
+
+  /*if (city.content.border) {
+    width = 1 + city.content.border.reduce((acc, cur) => (acc > cur.x) ? acc : cur.x, 0),
+    height = 1 + city.content.border.reduce((acc, cur) => (acc > cur.y) ? acc : cur.y, 0)
+  }*/
   console.log(width + " " + height)
 
   let seq = [
@@ -132,29 +148,19 @@ for (let city of data) {
       name: 'terrian',
       typeOn: false,
       progressOn: false,
-      busStation: false,
-      hideBlock: true
+      hideBlock: true,
+      terrian: true
     },
-    /*{
+    {
       name: 'development',
-      typeOn: true,
-      progressOn: true,
-      busStation: false,
-      hideBlock: false
     },
     {
       name: 'progressOnly',
       typeOn: false,
-      progressOn: true,
-      busStation: false,
-      hideBlock: false
     },
     {
       name: 'typeOnly',
-      typeOn: true,
       progressOn: false,
-      busStation: false,
-      hideBlock: false
     },
     {
       name: 'busStation',
@@ -162,7 +168,7 @@ for (let city of data) {
       progressOn: false,
       busStation: true,
       hideBlock: true
-    }*/
+    }
   ]
 
   for (let subconfig of seq) {
