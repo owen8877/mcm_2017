@@ -1,4 +1,6 @@
 {
     "lnglat": [-1.258524, 53.019033],
-    "scale": 12600
+    "scale": 12600,
+    "name": "Nottingham",
+    "wh": {"width": 64, "height": 48}
 }
