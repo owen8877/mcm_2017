@@ -17,28 +17,25 @@
 \endgroup
 
 \sortlist[entry]{anyt/global/}
-  \entry{conf:The-Athens-Charter}{inproceedings}{}
+  \entry{pdf:smart-growth}{manual}{}
     \name{author}{1}{}{%
-      {{hash=CL}{%
-         family={Corbusier},
-         familyi={C\bibinitperiod},
-         given={Le},
-         giveni={L\bibinitperiod},
+      {{hash=E}{%
+         family={EPA},
+         familyi={E\bibinitperiod},
       }}%
     }
-    \list{organization}{1}{%
-      {CIAM}%
-    }
-    \strng{namehash}{CL1}
-    \strng{fullhash}{CL1}
+    \strng{namehash}{E1}
+    \strng{fullhash}{E1}
     \field{labelnamesource}{author}
     \field{labeltitlesource}{title}
-    \field{labelalpha}{Cor33}
-    \field{sortinit}{C}
-    \field{sortinithash}{C}
-    \field{note}{\url{}}
-    \field{title}{Charte d'Athènes}
-    \field{year}{1933}
+    \field{labelalpha}{EPA11}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+  \field{note}{\url{http://www.sustainablecitiesinstitute.org/Documents/SCI/Report_Guide/Guide_EPA_SmartGrowthGHGReduction_2011.pdf}}
+    \field{pages}{1}
+    \field{title}{Smart Growth: A Guide to Developing and Implementing
+  Greenhouse Gas Reductions Programs.}
+    \field{year}{2011}
   \endentry
 
   \entry{pdf:barrie-official-plan}{manual}{}

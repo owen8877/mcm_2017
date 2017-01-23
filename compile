@@ -1,4 +1,4 @@
 #!/bin/sh
 cd paper
 FILE=mcmpaper
-xelatex ${FILE}.tex && xelatex ${FILE}.tex && evince ${FILE}.pdf
+xelatex ${FILE}.tex && bibtex8 ${FILE} && xelatex ${FILE}.tex && evince ${FILE}.pdf

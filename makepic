@@ -1,0 +1,27 @@
+#!/bin/sh
+DEST="/home/xdroid/mcm/paper/pic"
+RENDER="/home/xdroid/mcm/city-data/visual/lib/render.js"
+
+echo "Cleanup"
+rm $DEST/*
+
+echo "P1+P3 Nottingham/Barrie-development(-bus) (without boundary)"
+cd ~/mcm/city-data/visual/
+rm *svg
+node $RENDER *json
+mv *development* "$DEST"
+mv *bus* "$DEST"
+rm *svg
+
+echo "P2+P4 Nottingham/Barrie-patch-diff (with boundary)"
+cd ~/mcm/city-data/visual/patch-data/
+rm *svg
+node $RENDER *json
+mv *diff*development* "$DEST"
+rm *svg
+
+cd $DEST
+for file in *
+do
+    convert $file `basename $file .svg`.png
+done
