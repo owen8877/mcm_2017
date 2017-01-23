@@ -13,6 +13,20 @@ const config = {
   margin: 10
 }
 
+let ttttt = ['u', 'o', 'c', 'w', 'r']
+let newData = []
+for (let __x = 0; __x < 4; __x++) {
+  for (let __y = 0; __y < 5; __y++) {
+    newData.push({y:__x, x:__y, bus:false, type: ttttt[__y], progress: __x + 1})
+  }
+}
+let tran = {
+  'undeveloped': 'u',
+  'open space': 'o',
+  'recreation area': 'c',
+  'working area': 'w',
+  'residential area': 'r'
+}
 let data = []
 
 const colorPalette = (type, progress) => {
@@ -149,15 +163,16 @@ const draw = (dataSet, width, height, {typeOn = true, progressOn = true, busStat
   // draw info
   svg
     .append("text")
-    .attr("x", width / textScale)
-    .attr("y", 0 / textScale)
+    .attr("x", (width - 1.5) / textScale)
+    .attr("y", 3.5 / textScale)
     .attr("text-anchor", "end")
     .style("font-size", `${64 * textScale}px`)
+    .attr('fill', MD.get("Grey", 800))
     .attr("transform", `scale(${textScale}, ${textScale})`)
     //.text(dataSet.borderExtra.name)
     .text(filename)
 
-  svg
+  /*svg
     .append("text")
     .attr("x", width / textScale)
     .attr("y", 5 / textScale)
@@ -165,7 +180,75 @@ const draw = (dataSet, width, height, {typeOn = true, progressOn = true, busStat
     .style("font-size", `${40 * textScale}px`)
     .attr("transform", `scale(${textScale}, ${textScale})`)
     //.text(dataSet.borderExtra.name)
-    .text(seqName)
+    .text(seqName)*/
+
+  let fixx = width-7.5, fixy=height-7.5
+  // legend
+  svg
+    .append('g')
+    .selectAll("rect")
+    .data(newData)
+    .enter()
+    .append("rect")
+    .attr("x", d => {
+      return 2 * d.y + config.blockPadding
+    })
+    .attr("y", d => {
+      return 2 * d.x + config.blockPadding
+    })
+    .attr("width", d => {
+      return 2* (1 - 2 * config.blockPadding)
+    })
+    .attr("height", d => {
+      return 2 * (1 - 2 * config.blockPadding)
+    })
+    .attr("fill", d => {
+      //console.log('lol')
+      return colorPalette(typeOn ? d.type : 'wa', progressOn ? d.progress : '3')
+    })
+    .attr('transform', `translate(${fixx}, ${fixy})`)
+
+  let ssscale = 0.14
+  let keys = Object.keys(tran)
+  for (let i = 0; i < keys.length; i++) {
+    let lx = (fixx-0.5) / ssscale, ly = (2 * i + 1 + fixy) / ssscale
+    svg
+      .append("text")
+      .attr("x", lx)
+      .attr("y", ly)
+      .attr("text-anchor", "end")
+      .attr('fill', MD.get("Grey", 800))
+      .style("font-size", `${80 * ssscale}px`)
+      .attr("transform", `scale(${ssscale}, ${ssscale}) rotate(0, ${lx}, ${ly})`)
+      //.text(dataSet.borderExtra.name)
+      .text(keys[i])
+  }
+
+  for (let i = 1; i < 5; i++) {
+    let lx = (2 * i - 1.5 + fixx) / ssscale, ly = (fixy - 0.5) / ssscale
+    svg
+      .append("text")
+      .attr("x", lx)
+      .attr("y", ly)
+      .attr("text-anchor", "mid")
+      .attr('fill', MD.get("Grey", 700))
+      .style("font-size", `${80 * ssscale}px`)
+      .attr("transform", `scale(${ssscale}, ${ssscale}) rotate(0, ${lx}, ${ly})`)
+      //.text(dataSet.borderExtra.name)
+      .text(i)
+  }
+
+  let lx = (-0.5 + fixx) / ssscale, ly = (fixy - 3) / ssscale
+  svg
+    .append("text")
+    .attr("x", lx)
+    .attr("y", ly)
+    .attr("text-anchor", "mid")
+    .attr('fill', MD.get("Grey", 800))
+    .style("font-size", `${120 * ssscale}px`)
+    .attr("transform", `scale(${ssscale}, ${ssscale}) rotate(0, ${lx}, ${ly})`)
+    //.text(dataSet.borderExtra.name)
+    .text("Legend")
 
   return d3n.svgString()
 }
