@@ -232,3 +232,139 @@ Block number: 1543
 
 ----------
 
+File 'simulation/barrie/barrie-diff-10.json': 
+Block number: 169
+ -> Blocks counts: 
+{
+  "residential": 31,
+  "working area": 77,
+  "recreation and education": 61
+}
+
+ -> Blocks develop sum: 
+{
+  "residential": 33,
+  "working area": 77,
+  "recreation and education": 74
+}
+
+----------
+
+File 'simulation/barrie/barrie-diff-20.json': 
+Block number: 194
+ -> Blocks counts: 
+{
+  "recreation and education": 79,
+  "working area": 113,
+  "residential": 2
+}
+
+ -> Blocks develop sum: 
+{
+  "recreation and education": 79,
+  "working area": 113,
+  "residential": 3
+}
+
+----------
+
+File 'simulation/barrie/barrie-diff-30.json': 
+Block number: 199
+ -> Blocks counts: 
+{
+  "residential": 119,
+  "working area": 54,
+  "recreation and education": 26
+}
+
+ -> Blocks develop sum: 
+{
+  "residential": 119,
+  "working area": 54,
+  "recreation and education": 26
+}
+
+----------
+
+File 'patch-data/barrie-patch-diff.json': 
+Block number: 215
+ -> Blocks counts: 
+{
+  "working area": 119,
+  "residential": 56,
+  "open land": 34,
+  "recreation and education": 6
+}
+
+ -> Blocks develop sum: 
+{
+  "working area": 119,
+  "residential": 56,
+  "open land": 34,
+  "recreation and education": 6
+}
+
+----------
+
+File 'patch-data/barrie-patch.json': 
+Block number: 1842
+ -> Blocks counts: 
+{
+  "open land": 596,
+  "residential": 579,
+  "working area": 358,
+  "recreation and education": 122,
+  "unused land": 187
+}
+
+ -> Blocks develop sum: 
+{
+  "open land": 1320,
+  "residential": 1020,
+  "working area": 734,
+  "recreation and education": 260,
+  "unused land": 207
+}
+
+----------
+
+File 'patch-data/nottingham-patch-diff.json': 
+Block number: 299
+ -> Blocks counts: 
+{
+  "recreation and education": 32,
+  "working area": 222,
+  "residential": 45
+}
+
+ -> Blocks develop sum: 
+{
+  "recreation and education": 30,
+  "working area": 221,
+  "residential": 45
+}
+
+----------
+
+File 'patch-data/nottingham-patch.json': 
+Block number: 1543
+ -> Blocks counts: 
+{
+  "unused land": 88,
+  "open land": 199,
+  "residential": 614,
+  "recreation and education": 146,
+  "working area": 496
+}
+
+ -> Blocks develop sum: 
+{
+  "unused land": 30,
+  "open land": 304,
+  "residential": 1019,
+  "recreation and education": 300,
+  "working area": 1133
+}
+
+----------
+
