@@ -6,7 +6,7 @@ do
     file=`basename $1 .coutput`
     echo "Dealing with $file..."
 
-    awk -F ' ' -E "$ABSPATH/lib/p.awk" "$file.coutput" | sed -e 's#\(.*\),$#[\1]#g' > "$file.json"
+    cat "$file.coutput" | tr -d '\15\32' | awk -F ' ' -E "$ABSPATH/lib/p.awk" | sed -e 's#\(.*\),$#[\1]#g' > "$file.json"
     node "$ABSPATH/lib/render.js" "$file.json"
     shift
 done

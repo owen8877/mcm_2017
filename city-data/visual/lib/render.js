@@ -44,6 +44,7 @@ for (let file of files) {
   let name = path.basename(file, '.json')
   let border, borderExtra
   let _name = name.split('-')[0]
+  let _diff = name.split('-')[1] == "diff"
   try {
     border = require(`../border/${_name}-border.json`)
     borderExtra = require(`../border/${_name}-border-extra.json`)
@@ -59,6 +60,7 @@ for (let file of files) {
   /*****/
 
   datum.border = border
+  borderExtra.diff = _diff
   datum.borderExtra = borderExtra
   data.push({name, content: datum})
 }
@@ -120,9 +122,9 @@ const draw = (dataSet, width, height, {typeOn = true, progressOn = true, busStat
       .attr('d', geoPath)
       .attr("stroke", terrian ? MD.get('Blue', '900') : MD.get('Grey'))
       .attr("stroke-width", 0.2)
-      .attr("stroke-opacity", terrian ? 0.9 : 0.9)
+      .attr("stroke-opacity", terrian ? 0.5 : (dataSet.borderExtra.diff ? 0.8 : 0.0))
       .attr("fill", terrian ? MD.get('Blue') : MD.get('Grey'))
-      .attr("fill-opacity", terrian ? 0.5 : 0.1)
+      .attr("fill-opacity", terrian ? 0.5 : (dataSet.borderExtra.diff ? 0.1 : 0.0))
       .attr("transform", `scale(${1 / Math.cos(3.14 / 180 * dataSet.borderExtra.lnglat[1])}, 1)`)
   }
 
