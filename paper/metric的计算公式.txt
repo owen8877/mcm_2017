@@ -1,10 +1,5 @@
-我们利用类似于坐标平面的方式来记录每个square unit，也就是每个square unit都可以被表示成【G3】的形式。后面的所有【G3】都是代表一个square unit。
+我们利用类似于坐标平面的方式来记录每个square unit，也就是每个square unit都可以被表示成【G3】的形式。后面的所有【G3】都是代表一个square unit。同时我们用【G6】表示【G3】的区域类别，【G8】表示【G3】的发展程度。
 需要指出的是，在下面的计算公式中都不考虑类别为unused area的square unit；unused area只是在之后的growth plan中有所涉及。
-
-%参数表
-a   300米（square unit的边长）
-【G6】   【G3】的区域类别
-【G8】   【G3】的发展等级
 
 %公式1
 首先我们对一个城市的分区多样化程度进行定量分析。由于Pr.4中鼓励create walkable neighborhoods，所以我们主要考量居民可以从residential area通过步行到达working area和recreation area。
