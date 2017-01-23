@@ -1,0 +1,64 @@
+基于我们的metric给出的growth plan
+Growth plan based on our metric
+调控的方案是多种多样的，我们不可能考虑到所有的情况；所以我们有必要基于smart growth principles给出一定的假设，从而给出我们推荐的growth plan。
+Since there are many ways to give a growth plan it's impossible for us to take all possibilities into consideration. So we shall recommend our growth plan based on smart growth principles and certain hypothesis.
+%简化假设
+Simplifying assumptions
+根据Pr.2，应提倡compact building design，也就是应优先发展发展程度较低的地块。
+According to Pr.2, we should advocate compact building design, which means we should develop square units with low development level preferentially.
+根据Pr.7，我们提倡direct development towards existing communities，这意味着不能过度地开发改建地块。所以我们认为每年在新地块开发改建上的投入不能超过总投入的20%。
+According to Pr.7, we should advocate direct development towards existing communities, which means we shouldn't overdevelop unused areas. So we assume investment in unused areas or redevelopment shouldn't exceed 20% of gross investment.
+根据Pr.9，in order to make decisions cost effective，我们在选取最优growth plan时选用使得综合得分提升最高的方案。
+According to Pr.9, in order to make decisions cost effective, we will choose the growth plan which results in maximum overall score increment.
+根据Pr.10，我们应该根据各个分区的需要重新对投入进行分配，调整在不同区域类型上的投入比例。
+According to Pr.10, we will distribute our investment into different types of areas and adjust investment proportions.
+我们给出的growth plan的总投入与之前调查到的政府给予的总投入是相同的。
+Our growth plan will use same amout of investment as the government based on previous research.
+使得每个square unit的发展程度增加1的投入是相同的。
+We assume we will always invest the same to make a square unit development level increase one.
+由于所调查到的政府growth plan都是约10年的发展计划，所以我们每隔10年给出一个growth plan，共给出30年的growth plan。
+Since government growth plans are both 10-year development plan, we will make a growth plan every 10 year and together three consecutive plans make a 30-year growth plan.
+发展后所有square unit的发展程度不超过4。
+We assume no square unit's development level will exceed 4.
+我们只对unused area和发展程度为1的open space（一般是farmland）进行开发改建。
+We will only redevelop open space area with 1 development(generally farmland).
+
+%发展意愿函数
+Development will function
+容易发现，对于【G3】，由于其发展意愿和【G8】以及投入分别反相关，所以【G3】对于发展程度加t的意愿指数为【G26】。我们每次将选择一个意愿指数最高的square unit及其对应的t，对其进行t的投入，随后将整个地图更新后重新计算每个square unit。
+It's easy to see that, as for [G3], since its development will is negative correlated with [G8], [G3]'s develop will when we add t to its development level is [G26]. So, we choose a square unit with the highest develop will point along with its t, add t to its development level, and upgrade the whole map and recalculate every square unit's will point.
+当然这里也可以假设线性叠加，直接挑选意愿指数最高的若干个。但是我们并没有这样做。
+Of course we can assume the function is linear, and directly choose several square units with highest development will points, but we still choose to upgrade the map after each choice.
+这事实上也是一种贪心法的实现。
+This actually is another type of greedy method.
+
+%Nottingham的growthplan
+Nottingham's growth plan
+以下是每隔十年给出的growth plan。【P5】
+The following is Nottingham's growth plan (every 10 years).[P5]
+以下是三十年后的城市分区情况与现在的城市分区情况对比。【P6】
+The following is a comparison in city's square units between 30 years later and present.[P6]
+以下是新增公交站点的情况。【P7】
+The following is newly added bus stations' distribution. [P7]
+对于第一个十年growth plan，综合得分为67.72分，分布多样性得分、景观得分、住房选择自由和交通便捷得分依次为57.93分、92.50分、62.73分、57.70分。可以发现，我们的计划中将46.39%的投入花在了open space的建设上，而对于其余三个区域类别的投入较为平均。住房选择自由的得分相比政府的growth plan有了显著的提升，可以被理解成第一个10年的growth plan没有显著特点的原因。因为可以看出，第二个10年的growth plan主要是发展了downtown部分的自然景观（因为downtown部分高速发展科技的过程中势必使得此地区的open space匮乏）和高纬度地区的working area（那里主要四散着residential area和recreation area）；而第三个10年时由于自然景观的弱势已经被逐渐削减，所以开始在高纬度地区逐渐发展原本的优势分区working area和recreation area（downtown部分较为发达，所以不优先发展，这遵循了Pr.2）。第一个十年分布没有特点的原因就是弥补了部分地区住房选择不够匹配的缺陷，其次是大力发展自然景观后在其他分区的投入会稍显不足。
+As for the first 10-year growth plan, we obtain 67.72 points in overall score. The growth plan scores 57.93 points, 92.50 points, 62.73 points and 57.70 points in mix land use, beauty, housing and transportation. We can discover that in this plan, it spends 46.39% invesment on open space development, and relatively average investment on other three types of areas. Housing score increases remarkably compared to government's growth plan, which can be interpreted as the reason for the plan's lack of prominent characteristic. In the second 10-year growth plan, it mainly develops open spaces in the downtown (open spaces are scarce in the downtown due to its major focus on hi-tech development) and working areas in the north part of the city (residencial areas and recreational areas are distributed there). In the third 10-year growth plan, since the city's beauty score has increased a lot, it begins to develop working areas and recreational areas in the north part of the city. (Downtown is more developed, so it's not our priority according to Pr.2) The reason for the first 10-year growth plan's irregularity is to improve low housing conditions in certain areas in the city. Next, it focuses on development in open spaces, and less focused on other areas.
+对于30年的规划，我们对于residential area、working area、recreational area、open space以及undeveloped的投入比例分别为6.45%，23.94%，13.24%，44.14%，11.88%。也就说如果按发展潜力从高到低排序的话，Nottingham依次应该发展open space，working area，recreation area，undeveloped area和residential area。发展open space是因为smart growth principle中明确提及了自然景观的建设需求，而这恰恰又是Nottingham作为“科技之城”最为匮乏的一点。而发展working area正是Nottingham的growth need（这从政府的决策可以看出），这也恰恰证明了smart growth principles虽然并不与growth need相符，但绝不是背道而驰。smart growth principles本质上是在让城市更均衡地发展的同时遵循自身的growth need而继续发展。
+In the 30-year growth plan, we invest 6.45%, 23.94%, 13.24%, 44.14% and 11.88% of total investment respectively on residential areas, working areas, recreational areas, open spaces and undeveloped areas. It suggests that if we rank different types of areas in Nottingham from the most potential to the least potential, it would be open space，working area，recreational area，undeveloped area and residential area. Developing open spaces is to meet the need of vast natural landscape mentioned in smart growth principles, which is also the weakness of the 'technology city' Nottingham. Developing working area is also Nottingham's growth need, which can be interpreted from the government's plan, which suggests that smart growth principles may not entirely correlate with a city's growth need, but definitely do not contradict with it. So in essence, smart growth principles are designed to make a city grow in a more balanced way, and meet the city's need at the same time.
+三十年的growth plan中也存在着一定的不足之处。由于open space分布太少，所以围绕downtown的诸多open space的发展程度到了4。这与现实情况是不符的；这意味着在真实的城市growth plan中，是需要对分区规划进行改动来加以平衡downtown地区的open space需求的。
+The 30-year growth plan also have its disadvantages. Due to lack of open spaces, many open spaces downtown are developed into level 4, which is not realistic. It means in a real city growth plan, we need to adjust investment in different areas to balance the need of open space in the downtown.
+
+%Barrie的growthplan
+Barrie's growth plan
+以下是每隔十年给出的growth plan。【P8】
+The following is Barrie's growth plan (every 10 years).[P8]
+以下是三十年后的城市分区情况与现在的城市分区情况对比。【P9】
+The following is a comparison in city's square units between 30 years later and present.[P9]
+以下是新增公交站点的情况。【P10】
+The following is newly added bus stations' distribution.[P10]
+对于第一个十年growth plan，综合得分为78.55分，分布多样性得分、景观得分、住房选择自由和交通便捷得分依次为65.88分、92.02分、89.42分、66.89分。容易发现，之前极为弱势的分布多样性得分和住房选择性得分瞬间得到了增长；这是因为在左边的大多是residential area的带状区域中建设了working area，而在中间的大多是working area的带状区域中建设了residential area，打破了之前的三个带状区域的僵局。同样道理地，第二个十年着重于打破左右两个带状区域的单一布局（因为Barrie的residential area分布较广，发展压力较小），第三个十年中为了弥补第二个十年所放弃的residential area的发展，开始着重于在中间带状区域中增加residential area的分布和低纬度的边界区working area分布（因为那个区块大多是residential area）。
+The first 10-year growth plan scores 78.55 points overall. The growth plan scores 65.88 points, 92.02 points, 89.42 points and 66.89 points in mix land use, beauty, housing and transportaion. It's obvious that mix-land-use and housing score increase tremendously, which is because that working areas are developed in the left side of S-shape stripe zone, where most of the square units are residencial areas, and residential areas are developed in the center of S-shape stripe zone, where most of the square units are working areas. After development in this growth plan, three distinct S-shape strip zone no longer exists. In the second 10-year plan, it also focuses on eliminate flat distribution of squares in the S-stripe areas in the west and east side. Because Barrie's residencial areas are well-distributed, their development is not our priority. However, in the third 10-year growth plan, in order to make up the ignorance of residencial areas in the previous 10 years, it starts to develop residencial areas in the middle S-stripe shape area and working areas in the south part (Most areas there are residencial squares).
+对于30年的规划，我们对于residential area、working area、recreation area、open space以及undeveloped的投入比例分别为24.45%，32.94%，31.41%，0，16.30%。对比政府政策为residential area、working area、recreation area分别投入26.05%，55.35%，2.79%，我们可以看出对待residential area的态度是相近的，但政府对于recreation area的建设较为忽略。这是不满足Pr.1的。按发展潜力从高到低排序的话，Barrie依次应该发展working area，recreation area，residential area，undeveloped area和open space。由于Barrie的open space条件实在优异，而working area明显不足，所以优先发展working area而暂时不发展open space。
+In the 30-year growth plan, we invest 24.45%, 32.94%, 31.41%, 0% and 16.30% of total investment respectively on residential areas, working areas, recreation areas, open spaces and undeveloped areas. Compared to government's plan which invest 26.05%, 55.35% and 2.79% respectively on residential areas, working areas and recreational areas, we can see that both plans treat residential areas similarly, but the goverment overlooks investment on recreational areas. It doesn't meet Pr.1. So if we rank different types of areas from most potential to least potential, it would be working area, recreational area, residencial area, undeveloped area and open space. Since Barrie does own a lot of open spaces but lack working areas, it seems reasonable for Barrie to develop working areas first and put open space development aside.
+对比nottingham的五个区域类型的发展潜力，我们可以发现除去对open space的需求明显不同外，其余的几个区域类型发展潜力大小近乎类似。只是因为两个城市的residential area都占了城市的较大比重，暂时不需要承载人口快速增长的压力，所以相比发展另两个区域类型显得不那么重要。但是他们发展working area虽然都是为了顺应自身的growth need，但原因是截然不同的，Nottingham是为了扩大优势，而Barrie是为了弥补劣势。
+Compared with Nottingham's development potential in five different types of areas, we can find that despite Barrie and Nottingham have entirely different need for open space, but any other type's development potential is quite close. Because both cities' residential parts take up most of their areas, they don't have to face high population growth pressure. So it seems less important to develop residencial areas compared with working and recreational areas. Although they both develop working areas to meet their own growth need, their starting point is divergent. Nottingham develop working areas to strengthen its advantages, but Barrie is to make up for its weakness. 
+

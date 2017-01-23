@@ -4,6 +4,8 @@ RENDER="/home/xdroid/mcm/city-data/visual/lib/render.js"
 
 echo "Cleanup"
 rm $DEST/*
+mkdir -p $DEST/30
+mkdir -p $DEST/30.5
 
 echo "P1+P3 Nottingham/Barrie-development(-bus) (without boundary)"
 cd ~/mcm/city-data/visual/
@@ -20,7 +22,37 @@ node $RENDER *json
 mv *diff*development* "$DEST"
 rm *svg
 
+echo "Other"
+cd ~/mcm/city-data/visual/30
+rm *svg
+node $RENDER *json
+mv *diff*development* "$DEST"
+mv *output-30-development* "$DEST"
+mv *output-30-busStation* "$DEST"
+rm *svg
+
+echo "Other^2"
+cd ~/mcm/city-data/visual/30.5
+rm *svg
+node $RENDER *json
+mv *diff*development* "$DEST"
+mv *output-30-development* "$DEST"
+mv *output-30-busStation* "$DEST"
+rm *svg
+
 cd $DEST
+for file in *
+do
+    convert $file `basename $file .svg`.png
+done
+
+cd $DEST/30
+for file in *
+do
+    convert $file `basename $file .svg`.png
+done
+
+cd $DEST/30.5
 for file in *
 do
     convert $file `basename $file .svg`.png

@@ -75,6 +75,7 @@ for (let file of files) {
 
   datum.border = border
   datum.diff = _diff
+  datum.name = _name
   datum.borderExtra = borderExtra
   data.push({name, content: datum})
 }
@@ -170,7 +171,7 @@ const draw = (dataSet, width, height, {typeOn = true, progressOn = true, busStat
     .attr('fill', MD.get("Grey", 800))
     .attr("transform", `scale(${textScale}, ${textScale})`)
     //.text(dataSet.borderExtra.name)
-    .text(filename)
+    .text(dataSet.name)
 
   /*svg
     .append("text")
