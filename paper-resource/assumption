@@ -1,0 +1,16 @@
+每个square unit的边长a为300米。
+The side of each square unit measures 300 meters.
+每个square unit的分区是单一的，同时发展程度也相同。这是为了处理方便，而且由于square unit的边长不太大，所以这个近似也是合理的。
+Buildings in the same square unit has the same type and development. Since the side length of a square unit is relatively short, the approximation is rational.
+除unused area外的square unit的发展程度都是正整数，一般来说都不大于3。
+Except undeveloped areas, The development value in each square unit is a positive integer, generally no more than 3.
+unused area的发展程度是0。
+Specifically, the development value in undeveloped area is zero.
+平均地来说，open space在城市中的分布率是10%。
+Averagely speaking, 10% of all square units are open space.
+在某个working area工作的人的工资收入与相同发展程度的residential area相对应。
+People in working areas and residential areas with the same development value are under the same financial condition.
+在每个working area工作的人数是持平的。
+Each working area supports the same amout of people.
+可以进行开发改建的square area是unused area和发展程度为1（也就是最低）的open space。
+Only undeveloped area and open space area with 1 development can be developed or redeveloped.
