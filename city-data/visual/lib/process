@@ -1,5 +1,5 @@
 #!/bin/sh
-ABSPATH="~/mcm/city-data/visual"
+ABSPATH="/home/xdroid/mcm/city-data/visual"
 
 while [ ! -z "$1" ]
 do
