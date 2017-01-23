@@ -1,0 +1,26 @@
+%简化假设
+Simplifying assumption
+我们认为现在的residential area中居住着可容纳人数的80%。
+We assume that residential part holds 80% of its total capacity at the beginning.  
+我们认为3个十年的人口增长率是相同的，30年后人口增长到了现有的1.5倍。
+We assume that population growth rate are identical in the three decades, and population will increase by an additional 50% by 30 years later.
+每个10年需要承担相同的residential area发展压力。
+We suppose that residential area has to expand at the same rate.
+发展程度与可容纳人口数量成正比关系。
+The development of residential area is directly proportional to its population capacity.
+根据前面的简化假设，30年后的人口数量到了现有residential area承载量的1.2倍。
+According to our simplifying assumption, city's population will reach 120% of current population capacity 30 years later.
+于是我们在给出growth plan时要求，每次的10年growth plan需要拥有三次根号1.2-1约等于6.27%的人口压力；也就是说，residential area的平均发展程度在每次给出的growth plan中都需要增加至少6.27%。
+So as we give our growth plan, every 10-year growth plan will have to face $\sqrt[3]{1.2} \approx 1.0627$ population growth, which means residential areas' total development needs to increase at least 6.27% in every 10-year plan.
+以下是Nottingham每隔十年给出的growth plan。【P11】
+The following is Nottingham's every 10-year growth plan.
+以下是Barrie每隔十年给出的growth plan。【P12】
+The following is Barrie's every 10-year growth plan.
+Nottingham的growth plan遇到了和之前的无人口压力下的growth plan的同样的问题，甚至更加严重：由于本身downtown的发展程度足够高，所以根据Pr.2而不优先发展downtown地区。但因为人口压力，Nottingham不得不发展downtown外围的residential area；所以出于Pr.6而急需发展的open area受到了residential area的发展，不再优先发展downtown附近的open area，这导致了市中心的便宜，原先的高科技downtown的发展将会滞后。
+Nottingham's growth plan under population pressure encounters the same growth problems as before. Even worse, since the downtown's development is high enough, according to Pr.2 the plan won't develop downtown first. But forced by population pressure, Nottingham has to develop residential areas in peripheral areas. Therefore, open spaces are not well-developed because of residential areas' restriction, which directly leads to lack of development in open spaces around the downtown and makes downtown's development lag behind.
+而Barrie的30年growth plan中，由于人口压力所以需要大面积地发展residential area。而因为地图右上角的lake的影响，residential area被划分成两个水平的带状，所以其余产业的发展也随着residential area的发展而逐渐形成了两个带状区域。但是这两个水平的带状区域相比之前的竖直的带状区域，土地的混合使用率更加合理。可能产生的问题是临湖区域的过度开发导致水域环境的恶化。
+In Barrie's 30-year growth plan, due to even heavier population pressure, more residential areas need to be developed. But affected by the lake in the northeastern part, residential areas are divided into two horizonal stripe. Other types' development are also gradually form two stripes. However, the city's mix land use is more rational compared to former plan. The potential problem that overdeveloping lakeside areas results in water contamination cannot be ignored.
+由此可见，由于本身对于城市分区改造的投入有限，所以当人口压力较大的时候，短时间内的城市分区改变，将很有可能取决于此前residential area的分布情况。尤其是Nottingham，本身包含了Biocity和Boots在内的downtown区域将上移，本应得到发展的这几个高科技产业将会滞后，整个城市的经济模式也可能会发生改变。
+As we can see, due to limited investment in city's square units, when population pressure increases, the city's square units change may largely depend on how residential areas are distributed. Especially in Nottingham's case, the original downtown part, including Biocity and Boots, will move towards north. Several hi-tech industries in the former downtown areas may not be well-developed, and the whole city's economic pattern may completely change.
+
+
