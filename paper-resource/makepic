@@ -1,0 +1,23 @@
+#!/bin/sh
+DEST="~/mcm/paper/pic"
+RENDER="~/mcm/city-data/visual/lib/render.js"
+
+echo "Cleanup"
+rm "$DEST/*"
+
+echo "P1+P3 Nottingham/Barrie-development(-bus) (without boundary)"
+cd "~/mcm/city-data/visual/"
+rm *svg
+node "$RENDER" *json
+mv *development* "$DEST"
+rm *svg
+node "$RENDER" *json on
+mv *development* "$DEST"
+rm *svg
+
+echo "P2+P4 Nottingham/Barrie-patch-diff (with boundary)"
+cd "~/mcm/city-data/visual/patch-data/"
+rm *svg
+node "$RENDER" *json
+mv *diff*development* "$DEST"
+rm *svg

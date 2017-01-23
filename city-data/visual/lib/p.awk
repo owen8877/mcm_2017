@@ -3,7 +3,6 @@
     y=$2;
     p=$3;
     t=$4;
-    bus=$5;
     switch (t) {
         case 0:
             type="r";
@@ -21,5 +20,5 @@
             type="u";
             break;
     }
-    printf "{\"x\":%d,\"y\":%d,\"type\":\"%s\",\"progress\":%d,\"bus\":%s},", x, y, type, p, bus ? "true" : "false";
+    printf "{\"x\":%d,\"y\":%d,\"type\":\"%s\",\"progress\":%d,\"bus\":%s},", x, y, type, p, (($5 == "T") ? "true" : "false");
 }

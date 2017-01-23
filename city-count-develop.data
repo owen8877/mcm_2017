@@ -1,0 +1,370 @@
+File 'nottingham.json': 
+Block number: 1543
+ -> Blocks counts: 
+{
+  "unused land": 118,
+  "open land": 199,
+  "residential": 614,
+  "recreation and education": 146,
+  "working area": 466
+}
+
+ -> Blocks develop sum: 
+{
+  "unused land": 39,
+  "open land": 304,
+  "residential": 974,
+  "recreation and education": 270,
+  "working area": 912
+}
+
+----------
+
+File 'barrie.json': 
+Block number: 1842
+ -> Blocks counts: 
+{
+  "open land": 596,
+  "residential": 579,
+  "working area": 345,
+  "recreation and education": 122,
+  "unused land": 200
+}
+
+ -> Blocks develop sum: 
+{
+  "open land": 1286,
+  "residential": 964,
+  "working area": 615,
+  "recreation and education": 254,
+  "unused land": 228
+}
+
+----------
+
+File 'simulation/barrie/barrie-output-10.json': 
+Block number: 1842
+ -> Blocks counts: 
+{
+  "open land": 586,
+  "residential": 589,
+  "working area": 345,
+  "recreation and education": 132,
+  "unused land": 190
+}
+
+ -> Blocks develop sum: 
+{
+  "open land": 1276,
+  "residential": 1002,
+  "working area": 692,
+  "recreation and education": 333,
+  "unused land": 0
+}
+
+----------
+
+File 'simulation/barrie/barrie-output-20.json': 
+Block number: 1842
+ -> Blocks counts: 
+{
+  "open land": 585,
+  "residential": 591,
+  "working area": 380,
+  "recreation and education": 133,
+  "unused land": 153
+}
+
+ -> Blocks develop sum: 
+{
+  "open land": 1275,
+  "residential": 1006,
+  "working area": 805,
+  "recreation and education": 412,
+  "unused land": 0
+}
+
+----------
+
+File 'simulation/barrie/barrie-output-30.json': 
+Block number: 1842
+ -> Blocks counts: 
+{
+  "open land": 585,
+  "residential": 591,
+  "working area": 395,
+  "recreation and education": 133,
+  "unused land": 138
+}
+
+ -> Blocks develop sum: 
+{
+  "open land": 1275,
+  "residential": 1125,
+  "working area": 859,
+  "recreation and education": 438,
+  "unused land": 0
+}
+
+----------
+
+File 'simulation/nottingham/nottingham-diff-10.json': 
+Block number: 184
+ -> Blocks counts: 
+{
+  "recreation and education": 18,
+  "residential": 29,
+  "working area": 47,
+  "open land": 90
+}
+
+ -> Blocks develop sum: 
+{
+  "recreation and education": 24,
+  "residential": 27,
+  "working area": 47,
+  "open land": 90
+}
+
+----------
+
+File 'simulation/nottingham/nottingham-diff-20.json': 
+Block number: 195
+ -> Blocks counts: 
+{
+  "residential": 12,
+  "open land": 104,
+  "working area": 66,
+  "recreation and education": 13
+}
+
+ -> Blocks develop sum: 
+{
+  "residential": 13,
+  "open land": 104,
+  "working area": 66,
+  "recreation and education": 13
+}
+
+----------
+
+File 'simulation/nottingham/nottingham-diff-30.json': 
+Block number: 199
+ -> Blocks counts: 
+{
+  "working area": 80,
+  "open land": 66,
+  "recreation and education": 53
+}
+
+ -> Blocks develop sum: 
+{
+  "working area": 80,
+  "open land": 66,
+  "recreation and education": 53
+}
+
+----------
+
+File 'simulation/nottingham/nottingham-output-10.json': 
+Block number: 1543
+ -> Blocks counts: 
+{
+  "unused land": 91,
+  "open land": 193,
+  "recreation and education": 152,
+  "residential": 619,
+  "working area": 488
+}
+
+ -> Blocks develop sum: 
+{
+  "unused land": 0,
+  "open land": 388,
+  "recreation and education": 296,
+  "residential": 1005,
+  "working area": 959
+}
+
+----------
+
+File 'simulation/nottingham/nottingham-output-20.json': 
+Block number: 1543
+ -> Blocks counts: 
+{
+  "unused land": 90,
+  "open land": 193,
+  "recreation and education": 152,
+  "residential": 619,
+  "working area": 489
+}
+
+ -> Blocks develop sum: 
+{
+  "unused land": 0,
+  "open land": 492,
+  "recreation and education": 309,
+  "residential": 1018,
+  "working area": 1025
+}
+
+----------
+
+File 'simulation/nottingham/nottingham-output-30.json': 
+Block number: 1543
+ -> Blocks counts: 
+{
+  "unused land": 63,
+  "open land": 193,
+  "working area": 516,
+  "recreation and education": 152,
+  "residential": 619
+}
+
+ -> Blocks develop sum: 
+{
+  "unused land": 0,
+  "open land": 558,
+  "working area": 1105,
+  "recreation and education": 362,
+  "residential": 1018
+}
+
+----------
+
+File 'simulation/barrie/barrie-diff-10.json': 
+Block number: 169
+ -> Blocks counts: 
+{
+  "residential": 31,
+  "working area": 77,
+  "recreation and education": 61
+}
+
+ -> Blocks develop sum: 
+{
+  "residential": 33,
+  "working area": 77,
+  "recreation and education": 74
+}
+
+----------
+
+File 'simulation/barrie/barrie-diff-20.json': 
+Block number: 194
+ -> Blocks counts: 
+{
+  "recreation and education": 79,
+  "working area": 113,
+  "residential": 2
+}
+
+ -> Blocks develop sum: 
+{
+  "recreation and education": 79,
+  "working area": 113,
+  "residential": 3
+}
+
+----------
+
+File 'simulation/barrie/barrie-diff-30.json': 
+Block number: 199
+ -> Blocks counts: 
+{
+  "residential": 119,
+  "working area": 54,
+  "recreation and education": 26
+}
+
+ -> Blocks develop sum: 
+{
+  "residential": 119,
+  "working area": 54,
+  "recreation and education": 26
+}
+
+----------
+
+File 'patch-data/barrie-patch-diff.json': 
+Block number: 215
+ -> Blocks counts: 
+{
+  "working area": 119,
+  "residential": 56,
+  "open land": 34,
+  "recreation and education": 6
+}
+
+ -> Blocks develop sum: 
+{
+  "working area": 119,
+  "residential": 56,
+  "open land": 34,
+  "recreation and education": 6
+}
+
+----------
+
+File 'patch-data/barrie-patch.json': 
+Block number: 1842
+ -> Blocks counts: 
+{
+  "open land": 596,
+  "residential": 579,
+  "working area": 358,
+  "recreation and education": 122,
+  "unused land": 187
+}
+
+ -> Blocks develop sum: 
+{
+  "open land": 1320,
+  "residential": 1020,
+  "working area": 734,
+  "recreation and education": 260,
+  "unused land": 207
+}
+
+----------
+
+File 'patch-data/nottingham-patch-diff.json': 
+Block number: 299
+ -> Blocks counts: 
+{
+  "recreation and education": 32,
+  "working area": 222,
+  "residential": 45
+}
+
+ -> Blocks develop sum: 
+{
+  "recreation and education": 30,
+  "working area": 221,
+  "residential": 45
+}
+
+----------
+
+File 'patch-data/nottingham-patch.json': 
+Block number: 1543
+ -> Blocks counts: 
+{
+  "unused land": 88,
+  "open land": 199,
+  "residential": 614,
+  "recreation and education": 146,
+  "working area": 496
+}
+
+ -> Blocks develop sum: 
+{
+  "unused land": 30,
+  "open land": 304,
+  "residential": 1019,
+  "recreation and education": 300,
+  "working area": 1133
+}
+
+----------
+
