@@ -85,7 +85,7 @@ for (let file of files) {
         y: block.y,
         type: block.type,
         progress: 1,
-        bus: block.bus
+        bus: false
       })
       break
     }

@@ -44,7 +44,7 @@ for (let file of files) {
   let name = path.basename(file, '.json')
   let border, borderExtra
   let _name = name.split('-')[0]
-  let _diff = name.split('-')[1] == "diff"
+  let _diff = name.split('-').includes("diff")
   try {
     border = require(`../border/${_name}-border.json`)
     borderExtra = require(`../border/${_name}-border-extra.json`)
@@ -104,6 +104,8 @@ const draw = (dataSet, width, height, {typeOn = true, progressOn = true, busStat
       return 1 - 2 * config.blockPadding
     })
     .attr("fill", d => {
+      if (dataSet.borderExtra.diff && busStation && !d.bus)
+        return "none"
       if (hideBlock)
         return colorPalette('wa', '2')
       return colorPalette(typeOn ? d.type : 'wa', progressOn ? d.progress : '3')
