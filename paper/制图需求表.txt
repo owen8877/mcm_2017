@@ -1,4 +1,4 @@
 P1【Nottingham初始地图】【Barrie初始地图】【图例（颜色与深度的图例）】（无boundary）
-P2【Nottingham政府diff图】（有boundary）
+P2【Nottingham政府diff图】【Nottingham政府交通diff】（有boundary）
 P3【Nottingham交通站点分布】【Barrie交通站点分布】【图例】（有boundary）
-P4【Barrie政府diff图】（有boundary）
+P4【Barrie政府diff图】【Barrie政府交通diff】（有boundary）

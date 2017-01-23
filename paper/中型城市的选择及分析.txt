@@ -6,13 +6,11 @@
 在Nottingham的分区数据中，我们可以得到，residential area、working area、recreation area、open space的占比分别是43.09%，32.70%，10.25%，13.96%，而它们的平均发展程度则依次是1.59，1.96，1.85，1.53。由此可以看出，Nottingham的城区大部分由residential area构成，open space分布稀少；但是Nottingham的working area与recreation area发展程度普遍地较高。这与Nottingham着重发展科技、零售业和高等教育是分不开的；但同时，residential area的发展程度要低于其working area，也就是说Nottingham的政府在之前的发展中更多地着眼于了科技等经济方面的发展，而疏于居民生活质量的提升。
 Nottingham的综合得分为80.78分，分布多样性得分、景观得分、住房选择自由和交通便捷得分依次为70.60分、72.20分、86.91分、93.41分。根据前面的分区图我们可以发现，Nottingham的working area大多聚集于中部的downtown，而residential area与recreation area则四散在downtown的外围。这便导致了分布多样性得分的偏低。而对于另一项较低得分的景观得分，本身英国的温带海洋性气候是适宜自然景观的发展的。但是Nottingham的经济发展是要远远高于英国平均经济发展水平的【脚注】，也素以“科技之城”闻名，所以不可避免地在发展科技与商业的时候牺牲了open space的发展。这与Pr.6所提到的critical environmental areas产生了比较大的出入。后两项得分较高，也就是说它比较符合Pr.3与Pr.8。
 我们在Nottingham的政府官网【脚注http://www.nottinghamcity.gov.uk/】上获取了Nottingham的growth plan【参考文献】。经过整理，该growth plan可以反映在我们的模型上的部分可以见下图（图例与之前相同）：【P2】
-……………………………………
-……………………………………
+根据此图，我们可以发现Nottingham政府选择的策略师主导发展downtown部分的working area，右下角靠近railway station的地区以及上部的residential area和recreation area。可以看出，发展的主导思想还是发展working area，提升科技水准。在此growth plan下，Nottingham的综合得分为XXX分，分布多样性得分、景观得分、住房选择自由和交通便捷得分依次为75.14分、73.33分、84.51分、XXX分。而residential area、working area、recreation area、open space的平均发展程度依次变为了1.66，2.28，2.05，1.53。在前面就提到的疏于居民生活质量提升的缺点被再一次放大，所以住房选择自由得分下降。但是分布多样性得分得到了比较明显的提升，这应该得益于除了downtown部分的另两块区域的发展。
+需要指出的是，我们搜集到的growth plan中并没有提及open space的改善，反而是重点篇幅提及了作为城市地标性建筑的Boots与Biocity，将他们进一步技术革新。从这里可以看出政府的发展方向实质上是将城市优势产业部分进一步加强。这虽然一定程度上的满足了growth need，但在smart growth principles看来并不完全契合。
 
 %Barrie政府growth plan及其分析
 在Barrie的分区数据中，residential area、working area、recreation area、open space的占比分别是35.3%，20.97%，15.47%，36.30%，平均发展程度则依次是1.66，1.78，2.08，2.16。也就是说，Barrie的城区中working area和recreation area的占比较小，同时发展程度较高的是recreation area和open space。在分区图中可以比较明显地看出，Barrie的城市分区呈三个带状，左边的带状区域偏为residential area，中间的带状区域偏为working area，右边的带状区域则是residential area与recreation area交织。recreation area的高发展程度也主要是体现在了右边的带状区域，这里分布了作为Barrie的主要特征之一的各类冬季运动场所。Barrie的外围分布了大片的森林和水域，这是其得天独厚的优势条件，但也一定程度上地影响了其商业发展。对比Nottingham的分区图，Barrie位于城市边界上的working area密度要小于Nottingham，这可能也是影响它与外界贸易交流的原因之一。
 Barrie的综合得分为65.27分，分布多样性得分、景观得分、住房选择自由和交通便捷得分依次为54.24分，92.11分，64.06分，50.67分。我们可以发现，前面提到的三个带状区域极大地影响了Barrie对于Pr.1(mix land use)的适应程度以及Pr.3涉及的住房选择自由。值得提出的是，Barrie的道路比较宽敞（而且城市分区远比Nottingham明显），所以居民出行大多依靠汽车，这与Pr.8的交通选择是不相符合的。
 根据【参考文献】并整理，Barrie的growth plan可以被显式地表达为下图：【P4】
-……………………………………
-……………………………………
-
+Barrie政府意识到了贸易上的发展程度不足，主要发展了中间的带状区域，以及右边带状区域临近湖面的下半部分，同时选择治理一定量的水域。政府策略的侧重点依然是发展经济，因为可见有55.35%的发展集中在了working area。在此growth plan下，Barrie的综合得分为XXX分，分布多样性得分、景观得分、住房选择自由和交通便捷得分依次为57.93分、92.50分、62.73分、XXX分。可以看出，虽然似乎思路与Nottingham政府不同，Barrie政府注重发展薄弱环节（而不是继续开发景观以达成自己避暑城市的定位），但带状区域还是大幅度地限制了其区域发展的多样性。短时间内原有的城市分区设置造成的影响很难在短期的调控下得以控制。
