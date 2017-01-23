@@ -154,9 +154,9 @@ const draw = (dataSet, width, height, {typeOn = true, progressOn = true, busStat
       .data(dataSet.filter(item => item.bus))
       .enter()
       .append('circle')
-      .attr('cx', d => d.y + 0.7)
-      .attr('cy', d => d.x + 0.3)
-      .attr('r', 0.1)
+      .attr('cx', d => d.y + 0.6)
+      .attr('cy', d => d.x + 0.4)
+      .attr('r', 0.2)
       .attr('fill', () => MD.get('Red'))
   }
 

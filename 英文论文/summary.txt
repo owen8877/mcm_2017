@@ -1,0 +1,36 @@
+总结
+Summary
+
+
+我们根据1933年的《雅典宪章》中提出的分区理论，提出了将城市“碎片化”的思想，佐以分区理论，给每个“碎片”定义一个功能分区。
+We use partition theory in *Athens Charter, 1993*, define square units to 'shatter the city'. Using partition theory, we define each square units as a functional division.
+同时我们将10条smart growth principle合并、简化为了与功能分区密切相关的四个指数：分区多样性指数、景观指数、住房选择自由指数和交通便捷指数，借以判定城市发展是否契合smart growth principle。
+
+Meanwhile, we summarize 10 smart growth principles as four scores closely relative to functional division: mix-land-use score, beauty score, housing score and transportation score. We use them to evaluate whether a city's development meet with smart growth principles.
+利用我们的metric，我们对Nottingham和Barrie进行了分别的分析。
+Using our metric, we evaluate two specific cities, Nottingham and Barrie.
+Nottingham目前重科技发展，疏于居民生活质量的提升，同时在高度发展技术时不可避免地减少了自然景观的覆盖率，在四个指数上的体现是住房选择自由指数和交通便捷指数较高，分区多样性指数和景观指数不尽如人意。
+Nottingham focuses on technology development, but relatively ignores improve residents' living quality. At the same time, developing high-tech industries unavoidably reduces landscape and open spaces coverage areas. Nottingham has high transportation and housing score, but mix-land-use score and beauty score is not so satisfying.
+政府对于Nottingham的growth plan中预计继续大力发展downtown地区的高新技术，而我们所制定出的方案中提出应优先大力发展自然景观，随后再均衡发展working area。
+The government's growth plan for Nottingham focuses on further develop high-tech industries in downtown areas. However in our plan, we suggest that the city should first develop open spaces and landscape, and develop working areas in a balanced way.
+Barrie由于森林和水域覆盖率高，体现在景观指数上异常高分；但由于产区分布呈左中右三个“S型”带状分布，所以土地利用率低，同时住房选择自由度小，导致分区多样性指数和住房选择自由指数偏低。
+Barrie scores very high in beauty, due to its high forest and water coverage. But since different types of areas distribute in three S-shape stripe areas vertically, Barrie scores low in mix land use and housing choice.
+政府制定的growth plan中选择了发展较为薄弱的working area，而我们所制定出的方案中提出应首先打破三个“S型”带状区域的单一分区，使得土地利用多元化，以提升分区多样性指数和住房选择自由指数。
+
+The government made growth plan suggests the city should develop working areas first. However, in our plan, we argue that the city should first break the chain of S-shape stripes distribution, makes city land more mix-used, increasing Barrie's mix-land-use score and housing score.
+在增加了人口压力对于模型的修正后，Nottingham的市中心开始与之前的高新技术区产生偏移，而Barrie则是产生了两个水平的带状分布区域。
+通过如上的结论我们可以看出，smart growth principles在一定程度上是有所局限的。
+After modifying the model after considering population pressure, Nottingham's downtown begins to move compared to its former downtown. Barrie, however, develop two horizonal stripe areas. So we can conclude that, smart growth principles are limited in some ways.
+虽然根据smart growth principles的确可以得到较为符合城市发展需求的growth plan，但因为它对于城市布局紧凑的要求，导致其一定程度上地要求了城市各功能分区的分布与发展均衡。
+Although smart growth principles do make a city grow relatively in accordance with the city's own need, the city still tend to grow balanced in functional units due to the principles' demand for compact design. 
+但是每个城市都有自己的特点（如Nottingham的科技产业和Barrie的旅游产业），一味的发展均衡并不是它所需求的。
+But every city has its own charecteristics (such as hi-tech in Nottingham and tourism in Barrie). Forcing a city grow in a balanced way may not be a completely brilliant idea. 
+尤其是在增加了人口压力后，城市发展模式会更受局限，变得更为单一，甚至会放弃自己原先的优势产业发展。
+Especially after considering population pressure, the city's developing pattern will be restricted, even will give up its advantageous industries.
+这显然是不符合一个城市的发展预期的。
+
+But this is obviously not accordant with a city's expected development.
+Filion Pierre also mentioned in http://search.proquest.com/openview/90b555a98e1349b2841541123e31004a/1?pq-origsite=gscholar&cbl=27359
+，'It is indeed legitimate to wonder if smart growth is more than yet another planning fad critical of prevailing practices'
+我们认为，smart growth principles作为一个90年代提出的理论，并不完全适应当今社会的城市发展，而可能需要根据现实情况进行适当的修正。
+So we think, smart growth principles, as a set of theories in the 90s, don't completely apply to nowadays city development. It needs certain modifications based on realistic conditions.

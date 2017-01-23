@@ -3,7 +3,7 @@ DEST="/home/xdroid/mcm/paper/pic"
 RENDER="/home/xdroid/mcm/city-data/visual/lib/render.js"
 
 echo "Cleanup"
-rm $DEST/*
+rm $DEST/* -r
 mkdir -p $DEST/30
 mkdir -p $DEST/30.5
 
@@ -26,18 +26,16 @@ echo "Other"
 cd ~/mcm/city-data/visual/30
 rm *svg
 node $RENDER *json
-mv *diff*development* "$DEST"
-mv *output-30-development* "$DEST"
-mv *output-30-busStation* "$DEST"
+mv *diff*development* "$DEST"/30
+mv *output-30-development* "$DEST"/30
+mv *output-30-busStation* "$DEST"/30
 rm *svg
 
 echo "Other^2"
 cd ~/mcm/city-data/visual/30.5
 rm *svg
 node $RENDER *json
-mv *diff*development* "$DEST"
-mv *output-30-development* "$DEST"
-mv *output-30-busStation* "$DEST"
+mv *diff*development* "$DEST"/30.5
 rm *svg
 
 cd $DEST
