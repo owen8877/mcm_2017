@@ -209,7 +209,7 @@ With the help of Google map and OpenStreetMap, the following data is collected:
   \item Development level (between 1 and 3)
   \item Bus stop number (or other public transport station)
 \end{itemize}
-To put it simple, we have the following figure \ref{fig:two-cities} showing the distribution.
+To put it simple, we have the following figure \ref{fig:subfigure:barrie-development}, \ref{fig:subfigure:barrie-bus}, \ref{fig:subfigure:nottingham-development}, \ref{fig:subfigure:nottingham-bus} showing the distribution.
 \begin{figure}[htb]
   \label{fig:two-cities}
   \centering
@@ -242,14 +242,14 @@ To put it simple, we have the following figure \ref{fig:two-cities} showing the 
     Accounting for & 49.30\% & 32.07\% & 10.25\% & 13.96\% \\
     \hline
     Average level & 1.59 & 1.96 & 1.85 & 1.53 \\
-    Average level*\footnote{(under government's plan)} & 1.66 & 2.28 & 2.05 & 1.53 \\
+    Average level* & 1.66 & 2.28 & 2.05 & 1.53 \\
     \hline
   \end{tabular}
   \caption{Notthingham Distribution Data\footfullcite{pdf:the-nottingham-growth-plan}}
   \label{tab:nottingham-data}
 \end{table}
 
-As is shown in figure \ref{fig:subfigure:nottingham-development} \ref{fig:subfigure:nottingham-bus} and in table \ref{tab:nottingham-data}, the urban area of Nottingham city mainly consists of residential area, while open space accounts little.
+As is shown in figure \ref{fig:subfigure:nottingham-development} \ref{fig:subfigure:nottingham-bus} and in table \ref{tab:nottingham-data}, the urban area of Nottingham city mainly consists of residential area, while open space accounts little. (Note: * means `Under government's plan')
 It is worth noticing that working and recreational area has a relatively high development level, which is closely related to Nottingham's paying attention to technology, retail trade and advanced education.
 However, it means that residential area has a lower development comparing to working area, indicating that the government's focus has long been on economic growth rather than people's happiness.\\
 \begin{table}[t]
@@ -259,14 +259,14 @@ However, it means that residential area has a lower development comparing to wor
     Item & mix land use & beauty & residential choice & transport convenience & average \\
     \hline
     Score & 70.60 & 72.20 & 86.91 & 93.41 & 80.78 \\
-    Score*\footnote{(under government's plan)} & 75.14 & 73.33 & 84.51 & 92.30 & 81.32 \\
+    Score* & 75.14 & 73.33 & 84.51 & 92.30 & 81.32 \\
     \hline
   \end{tabular}
   \caption{Notthingham Score under Smart Growth Metric}
   \label{tab:nottingham-score}
 \end{table}
 
-Combining data from table \ref{tab:nottingham-score} and distribution in figure \ref{fig:subfigure:nottingham-development} \ref{fig:subfigure:nottingham-bus}, we can find that working area contentrates in the middle part of the city's downtown, while residential and recreation area scatters around the downtown, which leads to a decrease in the score of mix land use.
+Combining data from table \ref{tab:nottingham-score} and distribution in figure \ref{fig:subfigure:nottingham-development} \ref{fig:subfigure:nottingham-bus}, we can find that working area contentrates in the middle part of the city's downtown, while residential and recreation area scatters around the downtown, which leads to a decrease in the score of mix land use. (Note: * means `Under government's plan')
 As for the low performance in beauty, it seems contradictory to the temperate maritime climate, which is very suitable for plants to grow.\\
 
 Nevertheless, if considering that Nottingham has a far more prosperous economy than the rest of Britain\footfullcite{wiki:nottingham-gdp}, it is not surprising that Notthingham, known as `a Technology City', inevitably sacrifices open space to give way to economic and technology development.
@@ -324,14 +324,14 @@ Comparing to Nottingham's terrian (see figure \ref{fig:subfigure:nottingham-deve
     Item & mix land use & beauty & residential choice & transport convenience & average \\
     \hline
     Score & 54.24 & 92.11 & 64.06 & 50.67 & 65.27 \\
-    Score*\footnote{(under government's plan)} & 57.93 & 92.50 & 62.73 & 57.70 & 67.72\\
+    Score* & 57.93 & 92.50 & 62.73 & 57.70 & 67.72\\
     \hline
   \end{tabular}
   \caption{Barrie Score under Smart Growth Metric}
   \label{tab:barrie-score}
 \end{table}
 
-In table \ref{tab:barrie-score}, the first three scores reflects that the three `S-stipe zones' largely interrupts Barrie's adapting to `Pr.1'(mix land use) and housing choice in `Pr.3'.
+In table \ref{tab:barrie-score}, the first three scores reflects that the three `S-stipe zones' largely interrupts Barrie's adapting to `Pr.1'(mix land use) and housing choice in `Pr.3'. (Note: * means `Under government's plan')
 It's worth mentioning that roads in Barrie are a lot wider (and the distribution is more discrete than in Nottingham), so people tenf to drive instead of taking a bus, which is contrary to diverse transport choices in `Pr.8'.\\
 
 We looked up for the plan of Barrie government \cite{pdf:barrie-downtown-plan} \cite{pdf:barrie-waterfront} \cite{pdf:barrie-official-plan} \cite{pdf:barrie-industrial-mapping} and arrange out the following improvements, shown in figure \ref{fig:barrie-patch-diff}.\\
@@ -355,6 +355,8 @@ It is hard to make a big change in the city's functional distribution just in a 
 %-------------------------------------%
 
 \section{Growth plan based on our metric}
+\emph{This section gives answers to Problem 3 \& 4.}\\
+
 Since there are many ways to give a growth plan it's impossible for us to take all possibilities into consideration.
 So we shall recommend our growth plan based on smart growth principles and certain hypothesis.
 
@@ -421,7 +423,7 @@ This actually is another type of greedy method.\\
   }
   \caption{Comparation of bus stations' distribution}
 \end{figure}
-Figure \ref{fig:nottingham-diff}, \ref{fig:nottingham-comp}, and \ref{fig:nottingham-bus-comp} provide a great amount of information about how our plan can make Nottingham grow smarter.\\
+Figures in \ref{fig:nottingham-diff} provide a great amount of information about how our plan can make Nottingham grow smarter.\\
 \begin{table}[t]
 \centering
   \begin{tabular}{c|cccc|c}
@@ -504,7 +506,7 @@ The 30-year growth plan also have its disadvantages. Due to lack of open spaces,
   }
   \caption{Comparation of bus stations' distribution}
 \end{figure}
-Figure \ref{fig:barrie-diff}, \ref{fig:barrie-comp}, and \ref{fig:barrie-bus-comp} provide a great amount of information about how our plan can make Nottingham grow smarter.\\
+Figures in \ref{fig:barrie-bus-comp} provide a great amount of information about how our plan can make Nottingham grow smarter.\\
 \begin{table}[t]
 \centering
   \begin{tabular}{c|cccc|c}
@@ -544,6 +546,7 @@ Compared with Nottingham's development potential in five different types of area
 %-------------------------------------%
 
 \section{Amendment}
+\emph{This section gives an answer to Problem 5.}
 \subsection{Simplifying assumption}
 \begin{itemize}
   \item We assume that residential part holds 80\% of its total capacity at the beginning.
@@ -555,7 +558,7 @@ Compared with Nottingham's development potential in five different types of area
 \end{itemize}
 
 \subsection{Discussion}
-We have tested how the cities develop given that the populcation changes, as is shown in figure \ref{fig:nottingham-amend-diff} and \ref{fig:barrie-amend-diff}.\\
+We have tested how the cities develop given that the populcation changes, as is shown in the figures in \ref{fig:nottingham-amend-diff}.\\
 \begin{figure}[htb]
   \label{fig:nottingham-amend-diff}
   \centering
